@@ -141,10 +141,10 @@ var endGame = function() {
         localStorage.setItem("highscore", playerInfo.money);
         localStorage.setItem("name", playerInfo.name);
 
-        window.alert(playerInfo.name + " now has the new high score of " + playerInfo.money + "!");
+        window.alert(playerInfo.name + " now has the new high score of " + highScore + "!");
     }
     else {
-        window.alert(playerInfo.name + " did not beat the previous high score of " + playerInfo.money + ". Maybe next time!");
+        window.alert(playerInfo.name + " did not beat the previous high score of " + highScore + ". Maybe next time!");
 
     }
     //ask player if they'd like to play again
