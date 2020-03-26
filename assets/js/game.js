@@ -63,6 +63,9 @@ var fight = function(enemy) {
         //check enemy's health
         if (enemy.health <= 0) {
             window.alert(enemy.name + " has died!");
+
+            //somehow missed that player's need a reward for winning
+            playerInfo.money = playerInfo.money + 20;
             break;
         }
         else {
@@ -128,13 +131,13 @@ var startGame = function() {
 };
 
 var endGame = function() {
-    var highscore = localStorage.getItem("highscore");
-    if (highscore === null) {
-        highscore = 0;
+    var highScore = localStorage.getItem("highscore");
+    if (highScore === null) {
+        highScore = 0;
     }
 
     //if player is still alive, the player wins
-    if (playerInfo.money > highscore) {
+    if (playerInfo.money > highScore) {
         localStorage.setItem("highscore", playerInfo.money);
         localStorage.setItem("name", playerInfo.name);
 
