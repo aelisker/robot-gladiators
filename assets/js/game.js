@@ -47,16 +47,16 @@ var fightOrSkip = function() {
 
 var fight = function(enemy) {
     //keeps track of who goes first
-    var isPlayerTurn = "true";
+    var isPlayerTurn = true;
     var randomNum = Math.random();
     if (randomNum > 0.5){
-        isPlayerTurn = "false";
+        isPlayerTurn = false;
     }
 
     // repeat and execute as long as the enemy robot is alive 
     while(enemy.health > 0 && playerInfo.health > 0) {
 
-        if (isPlayerTurn === "true") {
+        if (isPlayerTurn === true) {
             if(fightOrSkip()){
                 break;
             }
@@ -94,14 +94,14 @@ var fight = function(enemy) {
             } 
         }
         //switch turn order
-        if (isPlayerTurn === "true") {
-            isPlayerTurn = "false";
-        }
-        else {
-            isPlayerTurn = "true";
-        }
-        //isPlayerTurn = !isPlayerTurn;
-       
+        isPlayerTurn = !isPlayerTurn;
+
+        // if (isPlayerTurn === "true") {
+        //     isPlayerTurn === "false"
+        // }
+        // else {
+        //     isPlayerTurn === "true";
+        // }
     }   
 };
 
